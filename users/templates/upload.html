@@ -1,0 +1,13 @@
+{% extends '_base.html' %}
+
+{% block content %}
+  <h2 class="card-title">Django File Upload Tutorial</h2>
+  <form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="document">
+    <button type="submit">Upload file</button>
+  </form>
+  {% if url %}
+    <p>Upload file: <a href="{{ url }}">{{ url }}</a></p>
+  {% endif %}
+{% endblock %}
